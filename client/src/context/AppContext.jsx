@@ -23,7 +23,7 @@ export const AppProvider = ({ children }) => {
     //Function to check if user is logged in
     const fetchUser = async () => {
         try {
-            const { data } = axios.get('/api/user/data');
+            const { data } = await axios.get('/api/user/data');
             if(data.success){
                 setUser(data.user);
                 setIsOwner(data.user.role === 'owner');
@@ -40,7 +40,7 @@ export const AppProvider = ({ children }) => {
     //Function to fetch all cars from server
     const fetchCars = async () => {
         try {
-            const { data } = axios.get('/api/user/cars');
+            const { data } = await axios.get('/api/user/cars');
             data.success ? setCars(data.cars) : toast.error(data.message);
             
         } catch (error) {
