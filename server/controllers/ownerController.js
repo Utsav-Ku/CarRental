@@ -88,7 +88,7 @@ export const toggleCarAvailability = async (req, res) => {
         }
 
         car.isAvaliable = !car.isAvaliable;
-        await Car.save();
+        await car.save();
 
         res.json({success: true, message: "Avalability Toggeled"});
         
@@ -112,7 +112,7 @@ export const deleteCar = async (req, res) => {
 
         car.owner = null;
         car.isAvaliable = false;
-        await Car.save();
+        await car.save();
 
         res.json({success: true, message: "Car Removed"});
         
