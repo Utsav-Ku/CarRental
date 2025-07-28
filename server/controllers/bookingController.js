@@ -21,14 +21,15 @@ export const checkAvailabilityOfCar = async (req, res) => {
 
         //Check car availability for the given date range using promise
         const availableCarsPromises = cars.map(async (car) => {
-           const available = await checkAvailability(car._id, pickupDate, returnDate);
-           return {...car._doc, isAvaliable: isAvaliable}
-        })
+            const isAvailable = await checkAvailability(car._id, pickupDate, returnDate);
+            return { ...car._doc, isAvailable: isAvailable };
+        });
+
 
         let availableCars = await Promise.all(availableCarsPromises);
-        availableCars = availableCars.filter(car => car.isAvaliable === true);
+        availableCars = availableCars.filter(car => car.isAvailable === true);
 
-        response.json({success: true, availableCars});
+        res.json({success: true, availableCars});
         
     } catch (error) {
         console.log(error.message);
@@ -56,7 +57,7 @@ export const createBooking = async (req, res) => {
         const noOfDays = Math.ceil((returned - picked) / (1000 * 60 * 60 * 24));
         const price = carData.pricePerDay * noOfDays;
 
-        await Booking.create({car, owner: carData.owner, user: _id, pickupDate, returnDate, price});
+        await Booking.create({car, owner: carData.owner.toString(), user: _id, pickupDate, returnDate, price});
 
         res.json({ success: true, message: "Booking Created"});
 
