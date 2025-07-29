@@ -9,17 +9,17 @@ const Testimonial = () => {
     const testimonials = [
         {   name: "Ravi Kumar", 
             location: "Agartala, India", 
-            image: assets.testimonial_image_1, 
+            image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=300", 
             testimonial: "I've rented card from various companies, but the experience with CarRental was exceptional." 
         },
         {   name: "Raj Nayan", 
             location: "Agartala, India", 
-            image: assets.testimonial_image_2, 
+            image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=300", 
             testimonial: "CarRental made my trip unforgettable. The car was in pristine condition and the service was top-notch." 
         },
         {   name: "Ayush Pratap", 
             location: "Agartala, India", 
-            image: assets.testimonial_image_1, 
+            image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=300", 
             testimonial: "I highly recommend CarRental for anyone looking to rent a luxury car. The process was seamless and the staff was incredibly helpful." 
         },
     ];
