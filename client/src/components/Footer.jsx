@@ -74,10 +74,10 @@ const Footer = () => {
                     <div>
                         <h2 className='text-base font-medium text-gray-800 uppercase'>Contact</h2>
                         <ul className='mt-3 flex flex-col gap-1.5'>
-                            <li>1234 Luxury Drive</li>
-                            <li><a href="#">San Francisco, CA 94107</a></li>
-                            <li>+1 234 567890</li>
-                            <li>info@example.com</li>
+                            <li>NIT Agartala</li>
+                            <li><a href="#">Agartala, Tripura, India</a></li>
+                            <li>+918651259833</li>
+                            <li>utsavkumar8651@gmail.com</li>
                         </ul>
                     </div>
                 </motion.div>
